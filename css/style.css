@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  touch-action: none;
+  overflow: hidden;
+}
+
+color {
+  /* color: hsl(hue, saturation, lightness); */
+}
