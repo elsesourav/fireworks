@@ -17,11 +17,11 @@ class Firework {
       this.self.maxTop = true;
       for (let i = 0; i < 400; i++) {
 
-        let y = random(-7, 5)
-        const x = random(-5, 5);
+        let y = random(-15, 10)
+        const x = random(-10, 10);
 
-        if (x < -3) y = random(-2, 5);
-        else if (x > 3) y = random(-5, 2);
+        if (x < -7) y = random(-7, 10);
+        else if (x > 7) y = random(7, -10);
 
 
         this.particles.push(
@@ -29,8 +29,8 @@ class Firework {
             this.self.x,
             this.self.y,
             this.self.r,
-            x * 2,
-            y * 2,
+            x,
+            y,
             this.self.gra,
             is ? randomColor() : this.self.color,
             true
