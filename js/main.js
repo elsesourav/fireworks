@@ -13,15 +13,9 @@ animation(5, true, () => {
   }
 })
 
-
 animation(FPS, run, () => {
   for (let i = fireworks.length - 1; i >= 0; i--) {
     fireworks[i].self.complite && (fireworks.splice(i, 1));
-  }
- 
-  if (!fireworks.length) {
-    clrScr(); 
-    background(0);
   }
 
   background(0, 0, 0, 0.1);

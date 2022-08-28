@@ -17,20 +17,20 @@ class Firework {
       this.self.maxTop = true;
       for (let i = 0; i < 200; i++) {
 
-        let y = random(-15, 5)
-        const x = random(-10, 10);
+        let y = random(-7, 5)
+        const x = random(-5, 5);
 
-        if (x < -8) y = random(-7, 5);
-        else if (x > 3) y = random(-15, 2)
+        if (x < -3) y = random(-2, 5);
+        else if (x > 3) y = random(-5, 2);
 
 
         this.particles.push(
           new Particle(
-            this.self.x + x,
-            this.self.y + y,
-            this.self.r,
-            x / 10,
-            y / 10,
+            this.self.x,
+            this.self.y,
+            this.self.r / 1.3,
+            x * 2,
+            y * 2,
             this.self.gra,
             is ? randomColor() : this.self.color,
             true
@@ -64,8 +64,8 @@ class Particle {
     this.vx = vx;
     this.vy = vy;
     this.gra = gra;
-    this.dg = random(1.02, 1.1);
     this.dr = random(1.02, 1.1);
+    this.dv = random(1.02, 1.06);
     this.maxTop = false;
     this.complite = false;
     this.fire = fire;
@@ -77,7 +77,9 @@ class Particle {
     this.y += this.vy;
     if (this.fire) {
       this.r /= this.dr;
-      this.gra /= this.dg;
+      this.vx /= this.dv;
+      this.vy /= this.dv;
+      this.dv *= 1.01;
     }
   }
 
