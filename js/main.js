@@ -3,7 +3,7 @@ let run = true;
 let fireworks = [];
 
 animation(5, true, () => {
-  if (random() < 0.1) {
+  if (random() < 0.3) {
     const v = scrHeight / 45;
     const vx = random(-0.5, 0.5);
     const vy = random(-v * 0.55, -v * 0.7); 

@@ -12,7 +12,7 @@ class Firework {
 
   update() {
     this.self.update();
-
+    const is = random() < 0.2;
     if (!this.self.maxTop && this.self.vy >= 0) {
       this.self.maxTop = true;
       for (let i = 0; i < 200; i++) {
@@ -20,7 +20,14 @@ class Firework {
         const y = random(-15, 10);
         this.particles.push(
           new Particle(
-            this.self.x + x, this.self.y + y, this.self.r, x / 10, y / 10, this.self.gra, this.self.color, true
+            this.self.x + x, 
+            this.self.y + y, 
+            this.self.r, 
+            x / 10, 
+            y / 10, 
+            this.self.gra, 
+            is ? randomColor() : this.self.color, 
+            true
           )
         );
       } 
