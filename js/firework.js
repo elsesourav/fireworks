@@ -15,7 +15,7 @@ class Firework {
     const is = random() < 0.2;
     if (!this.self.maxTop && this.self.vy >= 0) {
       this.self.maxTop = true;
-      for (let i = 0; i < 200; i++) {
+      for (let i = 0; i < 400; i++) {
 
         let y = random(-7, 5)
         const x = random(-5, 5);
@@ -28,7 +28,7 @@ class Firework {
           new Particle(
             this.self.x,
             this.self.y,
-            this.self.r / 1.3,
+            this.self.r,
             x * 2,
             y * 2,
             this.self.gra,
